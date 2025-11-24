@@ -73,6 +73,15 @@
             >;
         };
 
+        numbers {
+            bindings = <
+                _______, &kp LS(), SHT_ALT, SW_WND,  KC_DEL ,   _______, KC_7,    KC_8,    KC_9,    _______,
+                _______, SW_BK,   SW_FWD,  KC_LSFT, _______,   KC_DOT,  KC_4,    KC_5,    KC_6,    _______,
+                _______, _______, _______, _______, OS_FX  ,   KC_0,    KC_1,    KC_2,    KC_3,    _______,
+                                        _______, _______,   _______, _______
+            >;
+        };
+
         arrows_mac {
             bindings = <
                 /*      find in project  open terminal  find file   command palete         skip left     start of line    end of line        skip right*/
@@ -82,42 +91,5 @@
                 _______ DCK_LFT DCK_RHT _______ EP_HOME   KC_HOME      ALT_DWN ALT_UP      KC_END  _______
                                         _______ _______   _______      _______
             >;
-        };
-
-        nav_layer {
-            bindings = <
-                &trans     &trans     &trans      &trans          &trans       &trans           &trans         &trans      &trans     &trans
-                &trans     &trans     &trans      &trans          &trans       &trans           &kp LEFT       &kp DOWN    &kp UP   &kp RIGHT
-                &trans     &trans     &trans      &trans          &trans       &trans           &kp HOME       &kp PG_DN   &kp PG_UP  &kp END
-                                                  &trans          &trans       &kp ESC          &kp DEL
-            >;
-        };
-
-        other_layer {
-            bindings = <
-                &trans     &trans     &trans      &trans          &trans       &trans           &trans         &trans      &trans     &trans
-                &trans     &trans     &trans      &trans          &trans       &trans           &trans         &trans      &trans     &trans
-                &trans     &trans     &trans      &trans          &trans       &trans           &kp HOME       &trans      &trans     &trans
-                                                  &trans          &trans       &trans           &trans
-            >;
-        };
-
-        num_layer {
-            bindings = <
-                &kp LBKT   &kp N7     &kp N8      &kp N9          &kp RBKT      &trans          &trans         &trans      &trans     &trans
-                &kp SEMI   &kp N4     &kp N5      &kp N6          &kp EQUAL     &trans          &trans         &trans      &trans     &trans
-                &kp GRAVE  &kp N1     &kp N2      &kp N3          &kp BSLH      &trans          &trans         &trans      &trans     &trans
-                                                  &kp N0          &kp MINUS     &trans          &trans
-            >;
-        };
-
-        sym_layer {
-            bindings = <
-                &kp LBRC     &kp LS(N7)  &kp LS(N8)  &kp LS(N9) &kp RBRC       &trans &trans   &trans    &trans    &trans
-                &kp COLON     &kp LS(N4)  &kp LS(N5)  &kp LS(N6) &kp PLUS       &trans &trans   &trans    &trans    &trans
-                &kp TILDE     &kp LS(N1)  &kp LS(N2)  &kp LS(N3) &kp LS(BSLH)       &trans &trans   &trans    &trans    &trans
-                                                   &kp LS(N0) &kp UNDER   &trans &trans
-            >;
-        };
     };
 };
