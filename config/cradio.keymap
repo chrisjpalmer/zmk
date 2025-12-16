@@ -15,11 +15,11 @@
 #define NUM_L 3
 #define SYM_L 4
 
-#define CONTROL 0
-#define QUERTY_MAC 1
-#define SPECIAL_MAC 2
-#define NUMBERS_MAC 3
-#define ARROWS_MAC 4
+// #define CONTROL 0
+#define QUERTY_MAC 0
+#define SPECIAL_MAC 1
+#define NUMBERS_MAC 2
+#define ARROWS_MAC 3
 #define QUERTY_WIN 5
 #define SPECIAL_WIN 6
 #define NUMBERS_WIN 7
@@ -43,22 +43,15 @@
       
     };
 
+
     keymap {
         compatible = "zmk,keymap";
 
-        control {
-            bindings = <
-                &kp Q      &kp W      &kp E       &kp R          &kp T         &kp Y            &kp U          &kp I       &kp O      &kp P
-                &hm LGUI A &hm LALT S &hm LCTRL D &hm LSHFT F    &kp G         &kp H            &hm RSHFT J    &hm RCTRL K &hm LALT L &hm LGUI SQT
-                &kp Z      &kp X      &kp C       &kp V          &kp B         &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH
-                                                  &lt NAV_L TAB  &kp ENTER     &lt NUM_L SPACE  &lt SYM_L BSPC
-            >;
-        };
-
-        querty_mac {
+        querty_mac {    
+            // todo add game switch layer
             bindings = <
                 &kp Q        &kp W      &kp E     &kp R     &kp T                &kp Y     &kp U     &kp I      &kp O         &kp P 
-                &lt GAME A   &kp S      &kp D     &kp F     &kp G                &kp H     &kp J     &kp K      &kp L         &kp SCLN 
+                &kp A        &kp S      &kp D     &kp F     &kp G                &kp H     &kp J     &kp K      &kp L         &kp SCLN 
                 &mt LGUI Z   &mt LALT X &kp C     &kp V     &kp B                &kp N     &kp M     &kp COMMA  &mt RALT DOT  &mt RGUI FSLH 
                             &mt LCTRL RET     &lt NUMBERS_MAC BSPC               &lt SPECIAL_MAC SPACE      &kp LSFT
             >;
@@ -66,7 +59,7 @@
 
         special_mac {
             bindings = <
-                _______ &kp AT   &kp HASH   &kp DLLR  &kp PERCNT       &kp CARET  &kp AMPS &kp ASTRK &kp TILDE _______
+                _______ &kp AT   &kp HASH   &kp DLLR  &kp PERCENT      &kp CARET  &kp AMPS &kp ASTRK &kp TILDE _______
                 _______ &kp EXCL &kp EQUAL  &kp MINUS &kp SQT          &kp GRAVE  &kp BSLH &kp LBRC  &kp RBRC  _______
                 _______ &kp PIPE &kp PLUS   &kp UNDER &kp DQT          &kp LPAR   &kp RPAR &kp LBKT  &kp RBKT  _______
                                 _______     &mo ARROWS_MAC             _______      _______
@@ -74,11 +67,12 @@
         };
 
         numbers {
+            // todo add the rest of the bindings for this layer
             bindings = <
-                _______, &kp LS(), SHT_ALT, SW_WND,  KC_DEL ,   _______, KC_7,    KC_8,    KC_9,    _______,
-                _______, SW_BK,   SW_FWD,  KC_LSFT, _______,   KC_DOT,  KC_4,    KC_5,    KC_6,    _______,
-                _______, _______, _______, _______, OS_FX  ,   KC_0,    KC_1,    KC_2,    KC_3,    _______,
-                                        _______, _______,   _______, _______
+                _______ &kp LS(TAB) &kp LS(LALT) _______   &kp DEL       _______    &kp KP_N7    &kp KP_N8    &kp KP_N9    _______
+                _______ _______     _______      &kp LSHIFT _______      &kp KP_DOT &kp KP_N4    &kp KP_N5    &kp KP_N6    _______
+                _______ _______     _______      _______    _______      &kp KP_N0  &kp KP_N1    &kp KP_N2    &kp KP_N3    _______
+                                                    _______ _______         _______ _______
             >;
         };
 
@@ -88,7 +82,7 @@
                 _______ &kp LG(LS(F))    &kp LC(GRAVE)  &kp LG(P)   &kp LG(LS(P))          &kp LA(LEFT) &kp LC(LS(LEFT)) &kp LC(LS(RIGHT))  &kp LA(RIGHT) _______
                 /*        maximise      cursors to ref  select word     delete word            ---------------------arrows--------------------*/
                 _______ &kp LC(LA(RET))  &kp LA(RET)    &kp LSFT    &kp LA(BSPC)           &kp LEFT     &kp DOWN         &kp UP             &kp RIGHT _______
-                _______ DCK_LFT DCK_RHT _______ EP_HOME   KC_HOME      ALT_DWN ALT_UP      KC_END  _______
+                _______ _______          _______        _______     _______                &kp HOME     &kp LALT(DOWN)   &kp LALT(UP)       &kp END  _______
                                         _______ _______   _______      _______
             >;
     };
