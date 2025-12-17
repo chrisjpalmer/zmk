@@ -11,11 +11,12 @@
 #include <dt-bindings/zmk/bt.h>
 
 
-// #define CONTROL 0
 #define QUERTY_MAC 0
 #define SPECIAL_MAC 1
 #define NUMBERS_MAC 2
 #define ARROWS_MAC 3
+#define CONTROL 4
+
 #define QUERTY_WIN 5
 #define SPECIAL_WIN 6
 #define NUMBERS_WIN 7
@@ -62,13 +63,13 @@
             >;
         };
 
-        numbers {
+        numbers_mac {
             // todo add the rest of the bindings for this layer
             bindings = <
-                _______ &kp LS(TAB) &kp LS(LALT) _______   &kp DEL       _______    &kp KP_N7    &kp KP_N8    &kp KP_N9    _______
-                _______ _______     _______      &kp LSHIFT _______      &kp KP_DOT &kp KP_N4    &kp KP_N5    &kp KP_N6    _______
-                _______ _______     _______      _______    _______      &kp KP_N0  &kp KP_N1    &kp KP_N2    &kp KP_N3    _______
-                                                    _______ _______         _______ _______
+                _______ &kp LS(TAB) &kp LS(LALT) _______   &kp DEL       _______        &kp KP_N7    &kp KP_N8    &kp KP_N9    _______
+                _______ _______     _______      &kp LSHIFT _______      &kp KP_DOT     &kp KP_N4    &kp KP_N5    &kp KP_N6    _______
+                _______ _______     _______      _______    _______      &kp KP_N0      &kp KP_N1    &kp KP_N2    &kp KP_N3    _______
+                                                    _______ _______      &mo ARROWS_MAC _______
             >;
         };
 
@@ -77,9 +78,19 @@
                 /*      find in project  open terminal  find file   command palete         skip left     start of line    end of line        skip right*/
                 _______ &kp LG(LS(F))    &kp LC(GRAVE)  &kp LG(P)   &kp LG(LS(P))          &kp LA(LEFT) &kp LC(LS(LEFT)) &kp LC(LS(RIGHT))  &kp LA(RIGHT) _______
                 /*        maximise      cursors to ref  select word     delete word            ---------------------arrows--------------------*/
-                _______ &kp LC(LA(RET))  &kp LA(RET)    &kp LSFT    &kp LA(BSPC)           &kp LEFT     &kp DOWN         &kp UP             &kp RIGHT _______
-                _______ _______          _______        _______     _______                &kp HOME     &kp LALT(DOWN)   &kp LALT(UP)       &kp END  _______
-                                        _______ _______   _______      _______
+                _______ &kp LC(LA(RET))  &kp LA(RET)    &kp LSFT    &kp LA(BSPC)           &kp LEFT     &kp DOWN         &kp UP             &kp RIGHT     _______
+                _______ _______          _______        _______     &to CONTROL            &kp HOME     &kp LA(DOWN)     &kp LA(UP)         &kp END       _______
+                                                       _______ _______                      _______      _______
             >;
+        };
+
+        control {
+            bindings = <
+                _______   _______      _______      _______  _______          _______ _______      _______      _______      _______
+                _______   &bt BT_CLR   _______      _______  _______          _______ &bt BT_SEL 3 &bt BT_SEL 4 _______      _______
+                _______   _______      _______      _______  _______          _______ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 _______
+                                       _______  &to QUERTY_MAC                _______ _______
+            >;
+        };
     };
 };
