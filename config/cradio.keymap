@@ -33,7 +33,8 @@
 // - press both thumbs to go to layer 4 is achieved with adding an &mo to layers 2 and 3 which goes to 4 for the opposite thumb.
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
-&lt { quick-tap-ms = <200>; };
+// &lt { quick-tap-ms = <200>; };
+&mt { flavor = "tap-preferred" }
 
 / {
     behaviors {
