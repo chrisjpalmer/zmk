@@ -56,8 +56,8 @@
 
         special_mac {
             bindings = <
-                _______ &kp AT   &kp HASH   &kp DLLR  &kp PERCENT      &kp CARET  &kp AMPS &kp ASTRK &kp TILDE _______
-                _______ &kp EXCL &kp EQUAL  &kp MINUS &kp SQT          &kp GRAVE  &kp BSLH &kp LBRC  &kp RBRC  _______
+                &kp ESC &kp AT   &kp HASH   &kp DLLR  &kp PERCENT      &kp CARET  &kp AMPS &kp ASTRK &kp TILDE _______
+                &kp TAB &kp EXCL &kp EQUAL  &kp MINUS &kp SQT          &kp GRAVE  &kp BSLH &kp LBRC  &kp RBRC  _______
                 _______ &kp PIPE &kp PLUS   &kp UNDER &kp DQT          &kp LPAR   &kp RPAR &kp LBKT  &kp RBKT  _______
                                 _______     &mo ARROWS_MAC             _______      _______
             >;
@@ -66,7 +66,7 @@
         numbers_mac {
             // todo add the rest of the bindings for this layer
             bindings = <
-                _______ &kp LS(TAB) &kp LS(LALT) _______   &kp DEL       _______        &kp KP_N7    &kp KP_N8    &kp KP_N9    _______
+                _______ &kp LS(TAB) &kp LS(LALT) _______   &kp DEL       _______        &kp KP_N7    &kp KP_N8    &kp KP_N9    &kp BSPC
                 _______ _______     _______      &kp LSHIFT _______      &kp KP_DOT     &kp KP_N4    &kp KP_N5    &kp KP_N6    _______
                 _______ _______     _______      _______    _______      &kp KP_N0      &kp KP_N1    &kp KP_N2    &kp KP_N3    _______
                                                     _______ _______      &mo ARROWS_MAC _______
