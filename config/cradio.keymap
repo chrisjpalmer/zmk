@@ -52,6 +52,14 @@
         };
     };
 
+     conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <NUMBERS_MAC SPECIAL_MAC>;
+            then-layer = <ARROWS_MAC>;
+        };
+    };
+
     macros {
         gui_tab: gui_tab {
             compatible = "zmk,behavior-macro";
@@ -166,7 +174,7 @@
                 &kp ESC     &kp AT   &kp HASH   &kp DLLR  &kp PERCENT      &kp CARET  &kp AMPS &kp ASTRK &kp TILDE &kp BSPC
                 &kp TAB     &kp EXCL &kp EQUAL  &kp MINUS &kp SQT          &kp GRAVE  &kp BSLH &kp LBRC  &kp RBRC  _______
                 &to CONTROL &kp PIPE &kp PLUS   &kp UNDER &kp DQT          &kp LPAR   &kp RPAR &kp LBKT  &kp RBKT  _______
-                                _______     &mo ARROWS_MAC             _______   &kp LSFT
+                                _______     &mo NUMBERS_MAC             _______   &kp LSFT
             >;
         };
 
@@ -176,7 +184,7 @@
                 &kp ESC &kp LS(TAB) &kp LS(LALT) &kp LG(TILDE)   &kp DEL       _______        &kp KP_N7    &kp KP_N8    &kp KP_N9    &kp BSPC
                 &kp TAB &gui_stab   &gui_tab     &kp LSHIFT      _______      &kp KP_DOT     &kp KP_N4    &kp KP_N5    &kp KP_N6    _______
                 _______ _______     _______      _______         _______      &kp KP_N0      &kp KP_N1    &kp KP_N2    &kp KP_N3    _______
-                                                 &kp RET         _______      &mo ARROWS_MAC _______
+                                                 &kp RET         _______      &mo SPECIAL_MAC _______
             >;
         };
 
