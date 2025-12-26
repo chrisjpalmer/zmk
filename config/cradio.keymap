@@ -15,18 +15,19 @@
 #define SPECIAL_MAC 1
 #define NUMBERS_MAC 2
 #define ARROWS_MAC 3
+#define TAB_MAC 4
 
 
-#define QUERTY_WIN 4
-#define SPECIAL_WIN 5
-#define NUMBERS_WIN 6
-#define ARROWS_WIN 7
+#define QUERTY_WIN 5
+#define SPECIAL_WIN 6
+#define NUMBERS_WIN 7
+#define ARROWS_WIN 8
+#define TAB_WIN 9
 
-#define TAB_LAYER 8
-#define CONTROL 9
+#define CONTROL 10
+#define GAME 11
 
-#define FUNCTION_KEYS 9
-#define GAME 10
+// #define FUNCTION_KEYS 
 #define _______ &none
 
 
@@ -85,7 +86,7 @@
             bindings
                 = <&macro_press &kp LGUI>
                 , <&macro_tap &kp TAB>
-                , <&tog_on TAB_LAYER>;
+                , <&tog_on TAB_MAC>;
         };
 
         gui_stab: gui_stab {
@@ -94,7 +95,7 @@
             bindings
                 = <&macro_press &kp LGUI>
                 , <&macro_tap &kp LS(TAB)>
-                , <&tog_on TAB_LAYER>;
+                , <&tog_on TAB_MAC>;
         };
 
         alt_tab: alt_tab {
@@ -103,7 +104,7 @@
             bindings
                 = <&macro_press &kp LALT>
                 , <&macro_tap &kp TAB>
-                , <&tog_on TAB_LAYER>;
+                , <&tog_on TAB_WIN>;
         };
 
         alt_stab: alt_stab {
@@ -112,7 +113,7 @@
             bindings
                 = <&macro_press &kp LALT>
                 , <&macro_tap &kp LS(TAB)>
-                , <&tog_on TAB_LAYER>;
+                , <&tog_on TAB_WIN>;
         };
 
         // momentary numbers layer switching macro
@@ -126,7 +127,7 @@
                     , <&macro_pause_for_release>
                     , <&macro_release &kp LGUI>
                     , <&macro_press &tog_off NUMBERS_MAC>
-                    , <&macro_press &tog_off TAB_LAYER>;
+                    , <&macro_press &tog_off TAB_MAC>;
         };
 
         mo_numbers_win: mo_numbers_win {
@@ -139,7 +140,7 @@
                     , <&macro_pause_for_release>
                     , <&macro_release &kp LALT>
                     , <&macro_press &tog_off NUMBERS_WIN>
-                    , <&macro_press &tog_off TAB_LAYER>;
+                    , <&macro_press &tog_off TAB_WIN>;
         };
     };
 
@@ -157,6 +158,10 @@
 
     keymap {
         compatible = "zmk,keymap";
+
+        //
+        // MAC
+        //
 
         querty_mac {    
             // todo add game switch layer
@@ -198,6 +203,19 @@
             >;
         };
 
+        tab_mac {
+            bindings = <
+                &kp Q     _______      _______       _______  _______          _______ _______      _______      _______      _______
+                _______   &kp LS(TAB)  &kp TAB       _______  _______         &kp LEFT &kp DOWN     &kp UP       &kp RIGHT    _______
+                _______   _______      _______       _______  _______          _______ _______      _______      _______      _______
+                                       _______       _______                _______ _______
+            >;
+        };
+
+        //
+        // WINDOWS
+        //
+
         querty_win {    
             // todo add game switch layer
             bindings = <
@@ -231,19 +249,19 @@
                 /*               find in project   open terminal      find file   command palete         skip left     back             forward        skip right*/
                 &kp ESC          &kp LC(LS(F))     &kp LC(GRAVE)       &kp LC(P)   &kp LC(LS(P))          &kp LC(LEFT) &kp LA(LS(LEFT)) &kp LA(LS(RIGHT))  &kp LC(RIGHT) &kp BSPC
                 /*               maximise          cursors to ref      select word     delete word            ---------------------arrows--------------------*/
-                &kp TAB          &kp LG(UP)        &kp LA(RET)         &kp LSFT    &kp LA(BSPC)           &kp LEFT     &kp DOWN         &kp UP             &kp RIGHT     _______
+                &kp TAB          &kp LG(UP)        &kp LA(RET)         &kp LSFT    &kp LC(BSPC)           &kp LEFT     &kp DOWN         &kp UP             &kp RIGHT     _______
                 /*               dock left         dock right                                             start line   move down        move up           end line */
                 _______          &kp LG(LEFT)      &kp LG(RIGHT)       _______     _______                &kp HOME     &kp LA(DOWN)     &kp LA(UP)         &kp END       _______
                                                                         _______     _______                  _______      _______
             >;
         };
-        
-        tab {
+
+        tab_win {
             bindings = <
+                &kp DEL   _______      _______       _______  _______          _______ _______      _______      _______      _______
+                _______   &kp LS(TAB)  &kp TAB       _______  _______         &kp LEFT &kp DOWN     &kp UP       &kp RIGHT    _______
                 _______   _______      _______       _______  _______          _______ _______      _______      _______      _______
-                _______   &kp LS(TAB)  &kp TAB       _______  _______          _______ _______      _______      _______      _______
-                _______   _______      _______       _______  _______          _______ _______      _______      _______      _______
-                                       _______       _______                _______ _______
+                                                     _______  _______          _______ _______
             >;
         };
 
