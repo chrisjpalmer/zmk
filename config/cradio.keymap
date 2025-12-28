@@ -237,10 +237,10 @@
 
         numbers_win {
             bindings = <
-                &kp ESC &kp LS(TAB) &kp LS(LALT) _______       &kp DEL       _______       &kp KP_N7    &kp KP_N8    &kp KP_N9    &kp BSPC
-                &kp TAB &alt_stab   &alt_tab     &kp LSHIFT    _______      &kp KP_DOT     &kp KP_N4    &kp KP_N5    &kp KP_N6    _______
-                _______ _______     _______      _______       _______      &kp KP_N0      &kp KP_N1    &kp KP_N2    &kp KP_N3    _______
-                                                 &kp RET       _______      &mo SPECIAL_WIN _______
+                &kp ESC &kp LS(TAB) &kp LA(LSHIFT) _______     &kp DEL       _______       &kp KP_N7    &kp KP_N8    &kp KP_N9    &kp BSPC
+                &kp TAB &alt_stab   &alt_tab       &kp LSHIFT  _______      &kp KP_DOT     &kp KP_N4    &kp KP_N5    &kp KP_N6    _______
+                _______ _______     _______        _______     _______      &kp KP_N0      &kp KP_N1    &kp KP_N2    &kp KP_N3    _______
+                                                   &kp RET     _______      &mo SPECIAL_WIN _______
             >;
         };
 
