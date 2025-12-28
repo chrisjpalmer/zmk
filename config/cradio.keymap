@@ -197,8 +197,8 @@
                 &kp ESC          &kp LG(LS(F))     &kp LC(GRAVE)       &kp LG(P)   &kp LG(LS(P))          &kp LA(LEFT) &kp LC(LS(LEFT)) &kp LC(LS(RIGHT))  &kp LA(RIGHT) &kp BSPC
                 /*               maximise          cursors to ref      select word     delete word            ---------------------arrows--------------------*/
                 &kp TAB          &kp LC(LA(RET))   &kp LA(RET)         &kp LSFT    &kp LA(BSPC)           &kp LEFT     &kp DOWN         &kp UP             &kp RIGHT     _______
-                /*               dock left         dock right                                             start line   move down        move up           end line */
-                _______          &kp LC(LA(LEFT))  &kp LC(LA(RIGHT))   _______     _______                &kp HOME     &kp LA(DOWN)     &kp LA(UP)         &kp END       _______
+                /*               dock left         dock right          go to line                          start line   move down        move up           end line */
+                _______          &kp LC(LA(LEFT))  &kp LC(LA(RIGHT))   &kp LC(G)     _______                &kp HOME     &kp LA(DOWN)     &kp LA(UP)         &kp END       _______
                                                                         _______     _______                  _______      _______
             >;
         };
@@ -250,8 +250,8 @@
                 &kp ESC          &kp LC(LS(F))     &kp LC(GRAVE)       &kp LC(P)   &kp LC(LS(P))          &kp LC(LEFT) &kp LA(LS(LEFT)) &kp LA(LS(RIGHT))  &kp LC(RIGHT) &kp BSPC
                 /*               maximise          cursors to ref      select word     delete word            ---------------------arrows--------------------*/
                 &kp TAB          &kp LG(UP)        &kp LA(RET)         &kp LSFT    &kp LC(BSPC)           &kp LEFT     &kp DOWN         &kp UP             &kp RIGHT     _______
-                /*               dock left         dock right                                             start line   move down        move up           end line */
-                _______          &kp LG(LEFT)      &kp LG(RIGHT)       _______     _______                &kp HOME     &kp LA(DOWN)     &kp LA(UP)         &kp END       _______
+                /*               dock left         dock right          go to line                         start line   move down        move up           end line */
+                _______          &kp LG(LEFT)      &kp LG(RIGHT)       &kp LC(G)     _______                &kp HOME     &kp LA(DOWN)     &kp LA(UP)         &kp END       _______
                                                                         _______     _______                  _______      _______
             >;
         };
