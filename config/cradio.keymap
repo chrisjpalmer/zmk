@@ -26,8 +26,8 @@
 
 #define CONTROL 10
 #define GAME 11
+#define FUNCTION 12
 
-// #define FUNCTION_KEYS 
 #define _______ &none
 
 
@@ -184,10 +184,10 @@
 
         numbers_mac {
             bindings = <
-                &kp ESC &kp LS(TAB) &kp LS(LALT) &kp LG(TILDE)   &kp DEL       _______        &kp KP_N7    &kp KP_N8    &kp KP_N9    &kp BSPC
-                &kp TAB &gui_stab   &gui_tab     &kp LSHIFT      _______      &kp KP_DOT     &kp KP_N4    &kp KP_N5    &kp KP_N6    _______
-                _______ _______     _______      _______         _______      &kp KP_N0      &kp KP_N1    &kp KP_N2    &kp KP_N3    _______
-                                                 &kp RET         _______      &mo SPECIAL_MAC _______
+                &kp ESC &kp LS(TAB) &kp LS(LALT) &kp LG(TILDE)   &kp DEL          _______        &kp KP_N7    &kp KP_N8    &kp KP_N9    &kp BSPC
+                &kp TAB &gui_stab   &gui_tab     &kp LSHIFT      _______          &kp KP_DOT     &kp KP_N4    &kp KP_N5    &kp KP_N6    _______
+                _______ _______     _______      _______         &sl FUNCTION     &kp KP_N0      &kp KP_N1    &kp KP_N2    &kp KP_N3    _______
+                                                 &kp RET         _______          &mo SPECIAL_MAC _______
             >;
         };
 
@@ -237,10 +237,10 @@
 
         numbers_win {
             bindings = <
-                &kp ESC &kp LS(TAB) &kp LA(LSHIFT) _______     &kp DEL       _______       &kp KP_N7    &kp KP_N8    &kp KP_N9    &kp BSPC
-                &kp TAB &alt_stab   &alt_tab       &kp LSHIFT  _______      &kp KP_DOT     &kp KP_N4    &kp KP_N5    &kp KP_N6    _______
-                _______ _______     _______        _______     _______      &kp KP_N0      &kp KP_N1    &kp KP_N2    &kp KP_N3    _______
-                                                   &kp RET     _______      &mo SPECIAL_WIN _______
+                &kp ESC &kp LS(TAB) &kp LA(LSHIFT) _______     &kp DEL         _______        &kp KP_N7    &kp KP_N8    &kp KP_N9    &kp BSPC
+                &kp TAB &alt_stab   &alt_tab       &kp LSHIFT  _______         &kp KP_DOT     &kp KP_N4    &kp KP_N5    &kp KP_N6    _______
+                _______ _______     _______        _______     &sl FUNCTION    &kp KP_N0      &kp KP_N1    &kp KP_N2    &kp KP_N3    _______
+                                                   &kp RET     _______         &mo SPECIAL_WIN _______
             >;
         };
 
@@ -280,6 +280,15 @@
                 _______   &kp A      &kp S       &kp D        &kp F          _______ _______      _______      _______      _______
                 _______   _______      _______   &kp C        &kp V          _______ _______      _______      _______      _______
                                                _______   &kp SPACE                _______ _______
+            >;
+        };
+
+        function {
+            bindings = <
+                _______   _______  _______  _______  _______          _______  &kp F7  &kp F8  &kp F9 &kp F12
+                _______   _______  _______  _______  _______          _______  &kp F4  &kp F5  &kp F6 &kp F11
+                _______   _______  _______  _______  _______          _______  &kp F1  &kp F2  &kp F3 &kp F10
+                                               _______   _______                _______ _______
             >;
         };
     };
