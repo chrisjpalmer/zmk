@@ -296,8 +296,8 @@
         control {
             bindings = <
                 _______         &bt BT_CLR_ALL  &bt BT_CLR _______  _______          _______ _______         _______        _______          _______
-                _______         _______         _______    _______  _______          _______ &bt BT_SEL 3    &bt BT_SEL 4   _______          _______
-                &to QUERTY_WIN  &to QUERTY_MAC  _______    _______  _______          _______ &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2     _______
+                _______         _______         _______    _______  _______          _______ &bt BT_DISC 0   &bt BT_DISC 1  &bt BT_DISC 2    _______
+                &to QUERTY_WIN  &to QUERTY_MAC  _______    _______  _______          _______ &bt BT_SEL  0   &bt BT_SEL  1  &bt BT_SEL  2    _______
                                                          _______   _______              _______ _______
             >;
         };
