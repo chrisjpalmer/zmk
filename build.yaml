@@ -6,9 +6,9 @@
 # `artifact-name` to assign a name to distinguish build outputs from each other:
 #
 include:
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: cradio_left
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: cradio_right
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: settings_reset
