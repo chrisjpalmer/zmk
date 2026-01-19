@@ -188,7 +188,7 @@
                 &kp ESC     &kp AT   &kp HASH   &kp DLLR  &kp PERCENT      &kp CARET  &kp AMPS &kp ASTRK &kp TILDE &kp BSPC
                 &kp TAB     &kp EXCL &kp EQUAL  &kp MINUS &kp SQT          &kp GRAVE  &kp BSLH &kp LBRC  &kp RBRC  _______
                 &sl CONTROL &kp PIPE &kp PLUS   &kp UNDER &kp DQT          &kp LPAR   &kp RPAR &kp LBKT  &kp RBKT  _______
-                                _______     &mo NUMBERS_MAC             _______   &kp LSFT
+                                _______     &mo_numbers_mac             _______   &kp LSFT
             >;
         };
 
@@ -250,7 +250,7 @@
                 &kp ESC     &kp AT   &kp HASH   &kp DLLR  &kp PERCENT      &kp CARET  &kp AMPS &kp ASTRK &kp TILDE &kp BSPC
                 &kp TAB     &kp EXCL &kp EQUAL  &kp MINUS &kp SQT          &kp GRAVE  &kp BSLH &kp LBRC  &kp RBRC  _______
                 &sl CONTROL &kp PIPE &kp PLUS   &kp UNDER &kp DQT          &kp LPAR   &kp RPAR &kp LBKT  &kp RBKT  _______
-                                _______     &mo NUMBERS_WIN             _______   &kp LSFT
+                                _______     &mo_numbers_win             _______   &kp LSFT
             >;
         };
 
