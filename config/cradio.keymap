@@ -10,6 +10,11 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+
+#include <dt-bindings/zmk/pointing.h>
+
 
 #define QUERTY_MAC 0
 #define SPECIAL_MAC 1
@@ -218,12 +223,12 @@
 
         arrows_mac {
             bindings = <
-                /*               find in project   open terminal      find file   command palete         skip left     back             forward        skip right*/
-                &kp ESC          &kp LG(LS(F))     &kp LC(GRAVE)       &kp LG(P)   &kp LG(LS(P))          &kp LA(LEFT) &kp LC(LS(LEFT)) &kp LC(LS(RIGHT))  &kp LA(RIGHT) &kp BSPC
-                /*               maximise          cursors to ref      select word     delete word            ---------------------arrows--------------------*/
-                &kp TAB          &kp LC(LA(RET))   &kp LA(RET)         &kp LSFT    &kp LA(BSPC)           &kp LEFT     &kp DOWN         &kp UP             &kp RIGHT     _______
-                /*               dock left         dock right          go to line                          start line   move down        move up           end line */
-                _______          &kp LC(LA(LEFT))  &kp LC(LA(RIGHT))   &kp LC(G)     _______                &kp HOME     &kp LA(DOWN)     &kp LA(UP)         &kp END       _______
+                /* mouse up      find in project   open terminal      find file   command palete         skip left     back             forward        skip right        mouse scroll up*/
+                &mmv MOVE_UP     &kp LG(LS(F))     &kp LC(GRAVE)       &kp LG(P)   &kp LG(LS(P))          &kp LA(LEFT) &kp LC(LS(LEFT)) &kp LC(LS(RIGHT))  &kp LA(RIGHT) &msc SCRL_UP
+                /* mouse down    maximise          cursors to ref      select word     delete word            ---------------------arrows---------------------------     mouse scroll down*/
+                &mmv MOVE_DOWN   &kp LC(LA(RET))   &kp LA(RET)         &kp LSFT    &kp LA(BSPC)           &kp LEFT     &kp DOWN         &kp UP             &kp RIGHT     &msc SCRL_DOWN
+                /* mouse left    dock left         dock right          go to line                          start line   move down        move up           end line      mouse right*/
+                &mmv MOVE_LEFT   &kp LC(LA(LEFT))  &kp LC(LA(RIGHT))   &kp LC(G)     _______              &kp HOME     &kp LA(DOWN)     &kp LA(UP)         &kp END       &mmv MOVE_RIGHT
                                                                         _______     _______                  _______      _______
             >;
         };
@@ -280,12 +285,12 @@
 
         arrows_win {
             bindings = <
-                /*               find in project   open terminal      find file   command palete         skip left     back             forward        skip right*/
-                &kp ESC          &kp LC(LS(F))     &kp LC(GRAVE)       &kp LC(P)   &kp LC(LS(P))          &kp LC(LEFT) &kp LA(LS(LEFT)) &kp LA(LS(RIGHT))  &kp LC(RIGHT) &kp BSPC
-                /*               maximise          cursors to ref      select word     delete word            ---------------------arrows--------------------*/
-                &kp TAB          &kp LG(UP)        &kp LA(RET)         &kp LSFT    &kp LC(BSPC)           &kp LEFT     &kp DOWN         &kp UP             &kp RIGHT     _______
-                /*               dock left         dock right          go to line                         start line   move down        move up           end line */
-                _______          &kp LG(LEFT)      &kp LG(RIGHT)       &kp LC(G)     _______                &kp HOME     &kp LA(DOWN)     &kp LA(UP)         &kp END       _______
+                /* mouse up      find in project   open terminal      find file   command palete         skip left     back             forward        skip right        mouse scroll up*/
+                &mmv MOVE_UP     &kp LC(LS(F))     &kp LC(GRAVE)       &kp LC(P)   &kp LC(LS(P))          &kp LC(LEFT) &kp LA(LS(LEFT)) &kp LA(LS(RIGHT))  &kp LC(RIGHT) &msc SCRL_UP
+                /* mouse down    maximise          cursors to ref      select word     delete word            ---------------------arrows---------------------------     mouse scroll down*/
+                &mmv MOVE_DOWN   &kp LG(UP)        &kp LA(RET)         &kp LSFT    &kp LC(BSPC)           &kp LEFT     &kp DOWN         &kp UP             &kp RIGHT     &msc SCRL_DOWN
+                /* mouse left    dock left         dock right          go to line                         start line   move down        move up           end line       mouse right*/
+                &mmv MOVE_LEFT   &kp LG(LEFT)      &kp LG(RIGHT)       &kp LC(G)   _______                &kp HOME     &kp LA(DOWN)     &kp LA(UP)         &kp END       &mmv MOVE_RIGHT
                                                                         _______     _______                  _______      _______
             >;
         };
