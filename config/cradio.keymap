@@ -64,6 +64,15 @@
             display-name = "Layer-Tap";
         };
 
+        ltt_long: ltt_long {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <400>;
+            bindings = <&mo>, <&kp>;
+            display-name = "Layer-Tap";
+        };
+
         // use below with a dummy value for first parameter: &lt_numbers_mac 0 BSPC
         lt_numbers_mac: lt_numbers_mac {
             compatible = "zmk,behavior-hold-tap";
@@ -187,10 +196,10 @@
         querty_mac {    
             // todo add game switch layer
             bindings = <
-                &kp Q        &kp W       &kp E     &kp R     &kp T                &kp Y     &kp U     &kp I      &kp O          &kp P 
-                &ltt GAME A  &kp S       &kp D     &kp F     &kp G                &kp H     &kp J     &kp K      &kp L          &kp SCLN 
-                &mt LGUI Z   &mtt LALT X &kp C     &kp V     &kp B                &kp N     &kp M     &kp COMMA  &mtt RALT DOT  &mt RGUI FSLH 
-                            &mt LCTRL RET      &lt_numbers_mac 0 BSPC         &lt SPECIAL_MAC SPACE      &kp LSFT
+                &kp Q             &kp W       &kp E     &kp R     &kp T                &kp Y     &kp U     &kp I      &kp O          &kp P 
+                &ltt_long GAME A  &kp S       &kp D     &kp F     &kp G                &kp H     &kp J     &kp K      &kp L          &kp SCLN 
+                &mt LGUI Z        &mtt LALT X &kp C     &kp V     &kp B                &kp N     &kp M     &kp COMMA  &mtt RALT DOT  &mt RGUI FSLH 
+                                  &mt LCTRL RET      &lt_numbers_mac 0 BSPC         &lt SPECIAL_MAC SPACE      &kp LSFT
             >;
         };
 
@@ -249,10 +258,10 @@
         querty_win {    
             // todo add game switch layer
             bindings = <
-                &kp Q        &kp W       &kp E     &kp R     &kp T                &kp Y     &kp U     &kp I      &kp O          &kp P 
-                &ltt GAME A  &kp S       &kp D     &kp F     &kp G                &kp H     &kp J     &kp K      &kp L          &kp SCLN 
-                &mt LCTRL Z  &mtt LALT X &kp C     &kp V     &kp B                &kp N     &kp M     &kp COMMA  &mtt RALT DOT  &mt RCTRL FSLH 
-                            &mt LGUI RET      &lt_numbers_win 0 BSPC         &lt SPECIAL_WIN SPACE      &kp LSFT
+                &kp Q             &kp W       &kp E     &kp R     &kp T                &kp Y     &kp U     &kp I      &kp O          &kp P 
+                &ltt_long GAME A  &kp S       &kp D     &kp F     &kp G                &kp H     &kp J     &kp K      &kp L          &kp SCLN 
+                &mt LCTRL Z       &mtt LALT X &kp C     &kp V     &kp B                &kp N     &kp M     &kp COMMA  &mtt RALT DOT  &mt RCTRL FSLH 
+                                 &mt LGUI RET      &lt_numbers_win 0 BSPC         &lt SPECIAL_WIN SPACE      &kp LSFT
             >;
         };
 
